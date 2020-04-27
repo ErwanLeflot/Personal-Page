@@ -1,94 +1,2421 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<title>Erwan Leflot</title>
-<meta name="Author" content="NoSmoking">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Erwan Leflot</title>
+    <meta name="Author" content="NoSmoking">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="javaS/fullpage.css" />
+    <style>
+        html,
+        body {
+
+            height: 80em;
+            width: 80em;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+        }
+
+        #project {
+            display: flex;
+            align-self: center;
+            position: relative;
+            right: 10%;
+            height: auto;
+            width: 100%;
+            margin-top: 8em;
+        }
+
+        .affichage {
+            display: flex;
+            flex-direction: column;
+            background-color: dimgrey;
+            color: black;
+            font-family: "Saudagar";
+            font-size: larger;
+            padding: 1%;
+            font-weight: bold;
+            outline: double;
+            outline-color: dimgray;
+            margin: 1%;
+        }
+
+        .affichage p {
+            width: 100%;
+        }
+
+        .affichage div p {
+            outline: double;
+            padding: 1%;
+            margin-right: 1%;
+            width: 98%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            /*par exemple*/
+        }
+
+        #about {
+            display: flex;
+            align-self: center;
+            position: relative;
+            right: 10%;
+            margin-bottom: 50em;
+            width: 100%;
+        }
+
+        @font-face {
+            font-family: "Saudagar";
+            src: url("Saudagar.ttf");
+        }
+
+        @font-face {
+            font-family: "vonique";
+            src: url("vonique-92-d.ttf");
+        }
+
+
+        div#slider {
+            width: 80%;
+            max-width: 1000px;
+            overflow: hidden;
+            z-index: 4;
+            position: relative;
+        }
+
+        div#slider figure img {
+            width: 20%;
+            height: auto;
+            float: left;
+            z-index: 4;
+            position: relative;
+        }
+
+        div#slider figure {
+            position: relative;
+            width: 500%;
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+            text-align: left;
+            z-index: 4;
+        }
+
+        div#slider {
+            bottom: 10em;
+            width: 80%;
+            max-width: 1000px;
+            z-index: 4;
+            position: relative;
+        }
+
+        @keyframes slidy {
+            0% {
+                left: 0%;
+            }
+
+            20% {
+                left: 0%;
+            }
+
+            25% {
+                left: -100%;
+            }
+
+            45% {
+                left: -100%;
+            }
+
+            50% {
+                left: -200%;
+            }
+
+            70% {
+                left: -200%;
+            }
+
+            75% {
+                left: -300%;
+            }
+
+            95% {
+                left: -300%;
+            }
+
+            100% {
+                left: -400%;
+            }
+        }
+
+        div#slider figure {
+            position: relative;
+            width: 500%;
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+            left: 0;
+            text-align: left;
+            animation: 20s slidy infinite;
+            z-index: 4;
+        }
+
+        .triangle {
+            position: relative;
+        }
+
+        footer {
+            position: relative;
+            padding-left: 10px;
+            margin-top: 40em;
+            top: 100%;
+            width: 139%;
+            right: 1%;
+            font-family: "Saudagar";
+            color: white;
+            display: inline-flex;
+            font-size: larger;
+
+        }
+
+        footer p {
+            margin: 4%;
+        }
+
+        header {
+
+            position: fixed;
+            width: 102%;
+            padding-left: 5%;
+            display: flex;
+            background-color: dimgrey;
+            height: auto;
+            right: -1em;
+            top: 0%;
+            z-index: 10;
+
+        }
+
+        nav {
+            margin-left: 3em;
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: dimgrey;
+            font-family: "vonique";
+            z-index: 5;
+            flex-wrap: wrap;
+        }
+
+        #oim {
+            position: relative;
+            width: 30%;
+            left: 100%;
+            top: 20em;
+        }
+        contact{
+            margin-left: 2em;
+            margin-right: 3em;
+            
+        }
+        .text:hover{
+            text-decoration: underline;
+        }
+
+        home {
+            margin-left: 3em;
+            margin-right: 3em;
+        }
+
+        projet {
+            margin-left: 3em;
+            margin-right: 3em;
+        }
+
+        qui {
+
+            margin-left: 3em;
+            margin-right: 3em;
+        }
+
+        @media screen and (min-width:1080px) {
+            body {
+                background-image: url("images/bgLine.jpg");
+                width: 72em;
+            }
+
+            #project {
+
+                position: relative;
+
+            }
+
+            #about {
+
+                position: relative;
+                right: 10em;
+                top: 80em;
+
+            }
+
+            #animate {
+                position: absolute;
+                visibility: visible;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate1 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate2 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate3 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate4 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate5 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate10 {
+                position: absolute;
+                visibility: visible;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate11 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate12 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate13 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate14 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+
+            }
+
+            #animate15 {
+                position: absolute;
+                visibility: hidden;
+                right: -20%;
+                width: 45%;
+                top: 100%;
+                height: auto;
+            }
+
+            #triangle0 {
+                transform: rotate(298deg);
+                left: 36em;
+                bottom: -30em;
+                transition: 1s;
+            }
+
+
+
+            #triangle1 {
+                left: 12em;
+                bottom: -32em;
+                transform: rotate(0deg);
+                transition: 1s;
+                z-index: 5;
+            }
+
+            #triangle2 {
+                right: 05.5em;
+                bottom: -29em;
+                transform: rotate(58deg);
+                transition: 1s;
+                z-index: 4;
+            }
+
+
+            #triangle3 {
+                bottom: -22em;
+                right: 17.5em;
+                transform: rotate(114deg);
+                transition: 1s;
+                z-index: 3;
+            }
+
+
+            #triangle4 {
+                bottom: -18em;
+                right: 24em;
+                transform: rotate(172deg);
+                transition: 1s;
+                z-index: 2;
+            }
+
+
+            #triangle5 {
+                bottom: -20em;
+                right: 29em;
+                transform: rotate(230deg);
+                transition: 1s;
+                z-index: 1;
+            }
+
+            #triangle10 {
+                transform: rotate(298deg);
+                left: 36em;
+                bottom: -30em;
+                transition: 1s;
+            }
+
+
+            #triangle11 {
+                left: 12em;
+                bottom: -32em;
+                transform: rotate(0deg);
+                transition: 1s;
+                z-index: 5;
+            }
+
+            #triangle12 {
+                right: 05.5em;
+                bottom: -29em;
+                transform: rotate(58deg);
+                transition: 1s;
+                z-index: 4;
+            }
+
+            #triangle13 {
+                bottom: -22em;
+                right: 17.5em;
+                transform: rotate(114deg);
+                transition: 1s;
+                z-index: 3;
+            }
+
+
+            #triangle14 {
+                bottom: -18em;
+                right: 24em;
+                transform: rotate(172deg);
+                transition: 1s;
+                z-index: 2;
+            }
+
+            #triangle15 {
+                bottom: -20em;
+                right: 29em;
+                transform: rotate(230deg);
+                transition: 1s;
+                z-index: 1;
+            }
+
+
+        }
+
+        @media screen and (min-width:780px) and (max-width:1080px) {
+            body {
+                background-image: url("images/bgLine.jpg");
+                width: 53em;
+                display: flex;
+            }
+
+            html {
+                width: auto;
+            }
+
+            #oim {
+                visibility: visible;
+                flex-wrap: wrap;
+                top: 40em;
+                left: 30%;
+            }
+
+            #project {
+                position: relative;
+                top: 20em;
+                padding-top: 50%;
+            }
+
+            #about {
+
+                position: relative;
+
+                top: 60em;
+                padding-top: 50%;
+
+            }
+
+            #animate {
+                position: absolute;
+                visibility: visible;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate1 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate2 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate3 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate4 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate5 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate10 {
+                position: absolute;
+                visibility: visible;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate11 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate12 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate13 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate14 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+
+            }
+
+            #animate15 {
+                position: absolute;
+                visibility: hidden;
+                right: 20%;
+                width: 45%;
+                top: 135%;
+                height: auto;
+            }
+
+            #triangle0 {
+                left: 27em;
+                bottom: -4em;
+                transform: rotate(298deg);
+                transition: 1s;
+            }
+
+            #triangle1 {
+
+                left: 9em;
+                bottom: -5.5em;
+                width: 300px;
+                transform: rotate(0deg);
+                transition: 1s;
+            }
+
+            #triangle2 {
+
+                right: 3.5em;
+                bottom: -3em;
+                width: 300px;
+                transform: rotate(58deg);
+                transition: 1s;
+
+            }
+
+            #triangle3 {
+                bottom: 2em;
+                right: 12.5em;
+                width: 300px;
+                transform: rotate(114deg);
+                transition: 1s;
+            }
+
+            #triangle4 {
+                bottom: 5em;
+                width: 300px;
+                right: 17em;
+                transform: rotate(172deg);
+                transition: 1s;
+            }
+
+            #triangle5 {
+                width: 300px;
+                bottom: 3.4em;
+                right: 20.7em;
+                transform: rotate(230deg);
+                transition: 1s;
+            }
+
+            #triangle10 {
+                left: 27em;
+                bottom: -4em;
+                transform: rotate(298deg);
+                transition: 1s;
+            }
+
+            #triangle11 {
+
+                left: 9em;
+                bottom: -5.5em;
+                width: 300px;
+                transform: rotate(0deg);
+                transition: 1s;
+            }
+
+            #triangle12 {
+
+                right: 3.5em;
+                bottom: -3em;
+                width: 300px;
+                transform: rotate(58deg);
+                transition: 1s;
+
+            }
+
+            #triangle13 {
+                bottom: 2em;
+                right: 12.5em;
+                width: 300px;
+                transform: rotate(114deg);
+                transition: 1s;
+            }
+
+            #triangle14 {
+                bottom: 5em;
+                width: 300px;
+                right: 17em;
+                transform: rotate(172deg);
+                transition: 1s;
+            }
+
+            #triangle15 {
+                width: 300px;
+                bottom: 3.4em;
+                right: 20.7em;
+                transform: rotate(230deg);
+                transition: 1s;
+            }
+
+        }
+
+        @media screen and (min-width:400px) and (max-width:780px) {
+            body {
+                width: 42em;
+                background-image: url("images/bgLine.jpg");
+            }
+
+            #oim {
+                position: relative;
+                width: 30%;
+                left: 27%;
+                top: 20em;
+            }
+
+            html {
+                width: auto;
+            }
+
+            div#slider {
+                bottom: 0em;
+                width: 80%;
+                max-width: 1000px;
+                z-index: 4;
+                position: relative;
+            }
+
+            #oim {
+                visibility: visible;
+                flex-wrap: wrap;
+                top: 38em;
+                right: 30em;
+            }
+
+            #project {
+
+                position: relative;
+                right: 10em;
+
+            }
+
+            #about {
+
+                position: relative;
+                right: 10em;
+                top: 80em;
+
+            }
+
+            #animate {
+                position: absolute;
+                visibility: visible;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate1 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate2 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate3 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate4 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate5 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate10 {
+                position: absolute;
+                visibility: visible;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate11 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate12 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate13 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate14 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+
+            }
+
+            #animate15 {
+                position: absolute;
+                visibility: hidden;
+                right: 10%;
+                width: 45%;
+                top: 630%;
+                height: auto;
+            }
+
+            #triangle0 {
+                transform: rotate(298deg);
+                left: 25em;
+                bottom: -29em;
+                width: 550px;
+                transition: 1s;
+            }
+
+
+            #triangle1 {
+                left: 11.5em;
+                bottom: -31em;
+                transform: rotate(0deg);
+                transition: 1s;
+            }
+
+            #triangle2 {
+                right: -1.8em;
+                bottom: -29em;
+                transform: rotate(58deg);
+                transition: 1s;
+            }
+
+            #triangle3 {
+                bottom: -25em;
+                right: 5em;
+                transform: rotate(114deg);
+                transition: 1s;
+            }
+
+            #triangle4 {
+                bottom: -22.5em;
+                right: 8em;
+                transform: rotate(172deg);
+                transition: 1s;
+            }
+
+            #triangle5 {
+                bottom: -24em;
+                right: 10.5em;
+                transform: rotate(230deg);
+                transition: 1s;
+            }
+
+
+            /* PARTIE ABOUT */
+
+            #triangle10 {
+                transform: rotate(298deg);
+                left: 25em;
+                bottom: -29em;
+                width: 550px;
+                transition: 1s;
+            }
+
+            #triangle11 {
+                left: 11.5em;
+                bottom: -31em;
+                transform: rotate(0deg);
+                transition: 1s;
+            }
+
+            #triangle12 {
+                right: -1.8em;
+                bottom: -29em;
+                transform: rotate(58deg);
+                transition: 1s;
+            }
+
+            #triangle13 {
+                bottom: -25em;
+                right: 5em;
+                transform: rotate(114deg);
+                transition: 1s;
+            }
+
+            #triangle14 {
+                bottom: -22.5em;
+                right: 8em;
+                transform: rotate(172deg);
+                transition: 1s;
+            }
+
+            #triangle15 {
+                bottom: -24em;
+                right: 10.5em;
+                transform: rotate(230deg);
+                transition: 1s;
+            }
+
+
+        }
+
+
+        #container {
+            position: relative;
+        }
+
+        main {
+            position: relative;
+        }
+    </style>
+
 <body>
     <header>
         <nav>
             <contact>
-                <h2>Contact</h2>
+                <h2 class="text"><a href="#contact">Contact</a></h2>
             </contact>
             <home>
-                <h2>Home</h2>
+                <h2 class="text"><a href="#toph">Home</a></h2>
             </home>
             <projet>
-                <h2>Projets</h2>
+                <h2 class="text"><a href="#project">Projets</a></h2>
             </projet>
             <qui>
-                <h2>Qui suis-je ?</h2>
+                <h2 class="text"><a href="#about">Qui suis-je ?</a></h2>
             </qui>
         </nav>
     </header>
-    <main>
-        <h1>Bienvenue</h1>
-        <figure>
-            fleche
-        </figure>
-<div id="slider">
-  <figure>
-    <img src="images/Bienvenue.jpg" alt>
-    <img src="images/nom.jpg" alt>
-    <img src="images/jesuis.jpg" alt>
-    <img src="images/Bienvenue2.jpg" alt>
-    
-  </figure>
-</div>
+    <main id="toph">
+        <div>
+            <img src="images/oim.png" id="oim">
+            <div id="slider">
+                <figure>
+                    <img src="images/Bienvenue.jpg" alt>
+                    <img src="images/nom.jpg" alt>
+                    <img src="images/jesuis.jpg" alt>
+                    <img src="images/Bienvenue2.jpg" alt>
+                    <img src="images/Contactezmoi.jpg" alt>
+
+                </figure>
+            </div>
+        </div>
 
 
 
 
         <div id="project">
+            <div id="animate" class="affichage">
+                <div>
+                    <img src="images/Annotation 2020-04-25 125713 (2).png" width="100%">
+                </div>
+                <p>Voici ma page personnelle. Deuxième projet réalisé seul. Elle fut un
+                    veritable challenge. En effet l'image que je m'en faisais était loin d'être simple à coder. Heureusement
+                    (ou pas) je suis parvenu à obtenir une forme correspondante à mes attentes .</p>
+                <div>
+                    <p>Ce que j'en ai retenu : Des notions de JavaScript que je ne connaissais pas. Une autonomie et une meilleure
+                        gestion du temps. Avec entre autre une meilleure utilisation des docs.
+                    </p>
+                </div>
+            </div>
+            <div id="animate1" class="affichage">
+                <div>
+                    <img src="images/Annotation 2020-03-19 161619.png" width="100%">
+                </div>
+                <p>Voici le site que nous devions faire en anglais. Ici les textes ne sont pas insérés mais ce site
+                    destiné à une agence de photographe se voulait design et innovant. Ce site devant etre fait en duo
+                    je me suis mis avec Rémi Bastille qui fit le code en se basant sur mon maquettage. J'ai ensuite
+                    perfectionné le design.</p>
+                <div>
+                    <p>Ce que j'en ai retenu : Nous avons mis en place en travail de groupe bien repartie de plus je
+                        suis parvenu à faire des animations que je n'aurais jamais su faire avant.
+                    </p>
+                </div>
+            </div>
+            <div id="animate2" class="affichage">
+                <div>
+                    <img src="images/captureTet3.png" width="100%">
+                </div>
+                <p>J'ai découvert l'informatique grace à l'isn en Terminale et c'est en construisant ce projet, un
+                    Tetris avec differents modes que j'ai découvert ma passion pour l'informatique. En effet vous
+                    trouverez un mode versus,hardcore,classic et un system de personnalisation optimal jusqu'à sa propre
+                    pièce ainsi qu'un BOT fonctionnel pour le mode versus.</p>
+                <div>
+                    <p>Ce que j'en ai retenu : J'ai tout appris lors de ce projet, l'autonomie, le goût de
+                        l'informatique, savoir travailler sans aide (mes camarades étant portés par mon travail),et
+                        apprendre par soi-même (mon professeur étant professeur d'histoire il fut rapidement perdu par
+                        notre avancée).
+                    </p>
+                </div>
+            </div>
+            <div id="animate3" class="affichage">
+                <div>
+                    <img src="images/ews.png" width="100%">
+                </div>
+                <p>Un de mes projets les plus compliqués est une association, en effet je suis co-créateur d'une
+                    association écologiste appelée EarthWillSurvive. Nous publions encore régulierement des publications
+                    sur le facebook et l'instagram earth.will.survive. Nous avons organisé et organisons toujours des
+                    manifestations ou actions collectives afin de promouvoir l'écologie</p>
+                <div>
+                    <p>Ce que j'en ai retenu : Ici très peu d'informatique, seulement il a fallut apprendre à gérer de
+                        grandes foules, à prendre la parole ainsi qu'à être pédagogue et diplomate.
+                    </p>
+                </div>
+            </div>
+            <div id="animate4" class="affichage">
+                <div>
+                    <img src="images/capturePiscine.png" width="100%">
+                </div>
+                <p>Nous avons pour un de nos cours de Web créé un site sur des piscines, ce projet sur une periode
+                    courte nous avait familiarisés avec les points les plus spécifiques du CSS tel que l'animation et le
+                    responsif.</p>
+                <div>
+                    <p>Ce que j'en ai retenu : Une bonne maitrise du CSS ainsi qu'une autre experience de travail en
+                        équipe, un des aspects les plus importants de notre formation.
+                    </p>
+                </div>
+            </div>
+            <div id="animate5" class="affichage">
+                <div>
+                    <img src="images/captureS1.png" width="100%">
+                </div>
+                <p>En tant que premières années nous devions faire un site web pour le premier semestre, nous étions 4
+                    lors du démarrage du projet mais lorsque deux des membres de notre équipe ont cessés le cursus nous
+                    avons dut terminés seuls un site de 4 personnes. </p>
+                <div>
+                    <p>Ce que j'en ai retenu : La pression, devoir tout mettre de coté afin de rendre le meilleur
+                        résultat dans les temps.
+                    </p>
+                </div>
+            </div>
+            <div class="triangle" id="triangle0" onclick="myMove('animate','triangle0')">
+                <figure>
+                    <img src="images/triangle1.png" width="100%" />
+                </figure>
+            </div>
+            <div class="triangle" id="triangle1" onclick="myMove('animate1','triangle1')">
+                <img src="images/triangle1.png" width="100%" />
+            </div>
+            <div class="triangle" id="triangle2" onclick="myMove('animate2','triangle2')">
+                <img src="images/triangle1.png" width="100%" />
+            </div>
+            <div class="triangle" id="triangle3" onclick="myMove('animate3','triangle3')">
+                <img src="images/triangle1.png" width="100%" />
+            </div>
+            <div class="triangle" id="triangle4" onclick="myMove('animate4','triangle4')">
+                <img src="images/triangle1.png" width="100%" />
+            </div>
+            <div class="triangle" id="triangle5" onclick="myMove('animate5','triangle5')">
+                <img src="images/triangle1.png" width=100% />
+            </div>
+        </div>
+        <div id="about">
+            <div id="animate10" class="affichage">
+                <div>
+                    <img src="images/Cotejardin1.jpg" width="100%" ;>
+                </div>
+                <p>Lorsque je suis rentré au collège je ne pouvais pas parler, aujourd'hui, grâce à mes 8 ans de théâtre,
+                    je suis capable de parler à des foules. Pendant 5 ans dans une troupes ,avant de poursuivre au
+                    lycée, nous avions montés des pièces mélangeant théâtre traditionnel, Commedia Del Arte, et Cirque.
+                    En charge de 3 adultes handicapés je ne me suis jamais autant enrichi que dans cette période.</p>
+                <div>
+                    <p>Ce que j'en ai retenu : Une grande leçon d'humilité, une capacité d'éloquence et de pédagogie
+                        importante ainsi que savoir faire du diabolo !
+                    </p>
+                </div>
+            </div>
+            <div id="animate11" class="affichage">
+                <div>
+                    <img src="images/piano.jpg" width="100%">
+                </div>
+                <p>Arrivez au lycée je me suis décidé à étendre mes connaissance en arts et ai décidé de commencer le
+                    piano, dans une formation accélérée de 3ans environs je me suis familiarisé avec le solfège, les
+                    musiques pour enfants, etc... en ameliorant ma technique pour finalement jouer du classique tel que
+                    Für Elise pour citer un exemple connu.</p>
+                <div>
+                    <p>Ce que j'en ai retenu : L'acharnement et la determination, comme me l'ont souvent répétés mes
+                        parents, "il n'y a rien sans travail"'
+                    </p>
+                </div>
+            </div>
+            <div id="animate12" class="affichage">
+                <div>
+                    <h2>Compétences</h2>
+                    <div class="comp">
+                        <pre>HTML 5</pre>
+                        <div class="conteneur-barre"><span class="barre c100"></span></div>
+                    </div>
+                    <div class="comp">
+                        <pre>CSS 3</pre>
+                        <div class="conteneur-barre"><span class="barre c95"></span></div>
+                    </div>
+                    <div class="comp">
+                        <pre>Rel</pre>
+                        <div class="conteneur-barre"><span class="barre c50"></span></div>
+                    </div>
+                    <div class="comp">
+                        <pre>Python 3</pre>
+                        <div class="conteneur-barre"><span class="barre c85"></span></div>
+                    </div>
+                    <div class="comp">
+                        <pre>JavaScript</pre>
+                        <div class="conteneur-barre"><span class="barre c50"></span></div>
+                    </div>
+                    <div class="comp">
+                        <pre>MySQL</pre>
+                        <div class="conteneur-barre"><span class="barre c65"></span></div>
+                    </div>
+                    <div class="comp">
+                        <pre>C/JAVA</pre>
+                        <div class="conteneur-barre"><span class="barre c95"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div id="animate13" class="affichage">
+                <div>
+                    <img src="images/jf.jpg" width="100%">
+                </div>
+                <p>J'ai choisis de faire une première S et ai était bachelore avec la mention bien ainsi que la mention
+                    européenne, le tout surement garantie par 3 ans de classe européenne ainsi que mes options au lycée
+                    tel que coach en ping pong au lycée, comédien, et ma spécialité ISN. Je suis ensuite entrée à l'IUT
+                    informatique de Lannion en Bretagne et suis actuellement en 1ère année </p>
+                <div>
+                    <p>Ce que j'en ai retenu : La simple notion de travail, très peu présente au collège qui s'est accru
+                        au lycée puis à l'IUT où elle a atteint son paroxisme avec la nécessité de travailler en dehors
+                        des cours.
+                    </p>
+                </div>
+            </div>
+            <div id="animate14" class="affichage">
+                <div>
+                    <img src="images/info.jpg" width="100%">
+                </div>
 
-        
-        <div class="triangle" id="triangle0">
-            <figure>
-                <img src="images/triangle1.png" width="100%"/>
-            </figure>
+                <h1>Experience professionnelle</h1>
+
+                <p>2016-2016 Stage dans un cabinet de reparation informatique</p>
+                <p>2014-2019 Compétition ESport de StarCraft2 (échelle internationnale) </p>
+                <p>2016-2018 Entretiens de Jardins</p>
+                <div>
+                    <p>Ce que j'en ai retenu : La pression, devoir tout mettre de coté afin de rendre le meilleur
+                        résultat dans les temps.
+                    </p>
+                </div>
+            </div>
+            <div id="animate15" class="affichage">
+                <div>
+                    <img src="images/gw2.jpg" width="100%">
+                </div>
+                <h1>Centres d'interets</h1>
+                <div class="comp">
+                    <pre>HandBall</pre>
+                    <div class="conteneur-barre"><span class="barre c80"></span></div>
+                </div>
+                <div class="comp">
+                    <pre>Écologie</pre>
+                    <div class="conteneur-barre"><span class="barre c95"></span></div>
+                </div>
+                <div class="comp">
+                    <pre>Jeux Vidéos</pre>
+                    <div class="conteneur-barre"><span class="barre c100"></span></div>
+                </div>
+                <div class="comp">
+                    <pre>Cinema</pre>
+                    <div class="conteneur-barre"><span class="barre c80"></span></div>
+                </div>
+                <div class="comp">
+                    <pre>Culture Anglaise</pre>
+                    <div class="conteneur-barre"><span class="barre c70"></span></div>
+                </div>
+                <div class="comp">
+                    <pre>Arts et Sports</pre>
+                    <div class="conteneur-barre"><span class="barre c85"></span></div>
+                </div>
+
+            </div>
+            <div class="triangle" id="triangle10" onclick="myMove2('animate10','triangle10')">
+                <figure>
+                    <img src="images/triangle1.png" width="100%" />
+                </figure>
+            </div>
+            <div class="triangle" id="triangle11" onclick="myMove2('animate11','triangle11')">
+                <img src="images/triangle1.png" width="100%" />
+            </div>
+            <div class="triangle" id="triangle12" onclick="myMove2('animate12','triangle12')">
+                <img src="images/triangle1.png" width="100%" />
+            </div>
+            <div class="triangle" id="triangle13" onclick="myMove2('animate13','triangle13')">
+                <img src="images/triangle1.png" width="100%" />
+            </div>
+            <div class="triangle" id="triangle14" onclick="myMove2('animate14','triangle14')">
+                <img src="images/triangle1.png" width="100%" />
+            </div>
+            <div class="triangle" id="triangle15" onclick="myMove2('animate15','triangle15')">
+                <img src="images/triangle1.png" width=100% />
+            </div>
+
+
         </div>
-        <div class="triangle" id="triangle1">
-            <img src="images/triangle1.png" width="100%"/>
-        </div>
-        <div class="triangle" id="triangle2" >
-            <img src="images/triangle1.png" width="100%"/>
-        </div>
-        <div class="triangle" id="triangle3">
-            <img src="images/triangle1.png" width="100%"/>
-        </div>
-        <div class="triangle" id="triangle4">
-            <img src="images/triangle1.png" width="100%"/>
-        </div>
-        <div class="triangle" id="triangle5">
-            <img src="images/triangle1.png" width=100%/>
-        </div>
-    </div>
-    <div id="about">
-        <div class="triangle" id="triangle10">
-            <figure>
-                <img src="images/triangle1.png" width="100%"/>
-            </figure>
-        </div>
-        <div class="triangle" id="triangle11">
-            <img src="images/triangle1.png" width="100%"/>
-        </div>
-        <div class="triangle" id="triangle12" >
-            <img src="images/triangle1.png" width="100%"/>
-        </div>
-        <div class="triangle" id="triangle13">
-            <img src="images/triangle1.png" width="100%"/>
-        </div>
-        <div class="triangle" id="triangle14">
-            <img src="images/triangle1.png" width="100%"/>
-        </div>
-        <div class="triangle" id="triangle15">
-            <img src="images/triangle1.png" width=100%/>
-        </div>
-        
-        
-    </div>
-        
     </main>
+    <footer id="contact">
+        <p>06.23.91.23.48</p>
+        <p>mail : erwan.leflot@gmail.com</p>
+        <p>Instagram : ErwanLeflotCode</p>
+        <a href="#" download>Télécharger mon CV</a>
+    </footer>
 </body>
+
 </html>
+<script type="text/JavaScript">
+
+    function myMove(idd,tri){
+        if (document.body)
+        {
+        var larg = (document.body.clientWidth);
+        }
+        else
+        {
+        var larg = (window.innerWidth);
+        }
+        
+            console.log(window.innerWidth);
+        var elem = document.getElementById(idd);
+        var elem2 = document.getElementById(tri);
+
+        var elemt1 = document.getElementById('triangle0');
+        var elemt2 = document.getElementById('triangle1');
+        var elemt3 = document.getElementById('triangle2');
+        var elemt4 = document.getElementById('triangle3');
+        var elemt5 = document.getElementById('triangle4');
+        var elemt6 = document.getElementById('triangle5');
+
+        var ielemt1 = document.getElementById('animate');
+        var ielemt2 = document.getElementById('animate1');
+        var ielemt3 = document.getElementById('animate2');
+        var ielemt4 = document.getElementById('animate3');
+        var ielemt5 = document.getElementById('animate4');
+        var ielemt6 = document.getElementById('animate5');
+        if (larg >= 1080) {
+        if (elem.style.visibility=="visible"){
+            elem.style.visibility="hidden";
+            if (tri=='triangle0'){
+                elem2.style.left='32em';
+                elem2.style.bottom='-28em';
+            }
+            if (tri=='triangle1'){
+                elem2.style.left='12em';
+                elem2.style.bottom='-32em';
+            }
+            if (tri=='triangle2'){
+                elem2.style.right='5.5em';
+                elem2.style.bottom='-29em';
+            }
+            if (tri=='triangle3'){
+                elem2.style.bottom='-22em';
+                elem2.style.right='17.5em';
+            }
+            if (tri=='triangle4'){
+                elem2.style.bottom='-18em';
+                elem2.style.right='24em';
+                
+                }
+            if (tri=='triangle5'){
+                elem2.style.bottom='-20em';
+                elem2.style.right='29em';
+                
+                }
+        }else{
+        elem.style.visibility="visible";
+        if (tri=='triangle0'){
+                elem2.style.left='36em';
+                elem2.style.bottom='-30em';
+
+                elemt2.style.left='12em';
+                elemt3.style.right='5.5em';
+                elemt4.style.bottom='-22em';
+                elemt5.style.bottom='-18em';
+                elemt6.style.bottom='-20em';
+
+                elemt2.style.bottom='-32em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='17.5em';
+                elemt5.style.right='24em';
+                elemt6.style.right='29em';
+
+                
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle1'){
+                elem2.style.left='12em';
+                elem2.style.bottom='-36em';
+
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                
+                elemt3.style.right='5.5em';
+                elemt4.style.bottom='-22em';
+                elemt5.style.bottom='-18em';
+                elemt6.style.bottom='-20em';
+
+                
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='17.5em';
+                elemt5.style.right='24em';
+                elemt6.style.right='29em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle2'){
+                elem2.style.right='9em';
+                elem2.style.bottom='-33em';
+                
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                elemt2.style.left='12em';
+                
+                elemt4.style.bottom='-22em';
+                elemt5.style.bottom='-18em';
+                elemt6.style.bottom='-20em';
+
+                elemt2.style.bottom='-32em';
+                
+                elemt4.style.right='17.5em';
+                elemt5.style.right='24em';
+                elemt6.style.right='29em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle3'){
+                elem2.style.bottom='-20em';
+                elem2.style.right='22.5em';
+
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                elemt2.style.left='12em';
+                elemt3.style.right='5.5em';
+                
+                elemt5.style.bottom='-18em';
+                elemt6.style.bottom='-20em';
+
+                elemt2.style.bottom='-32em';
+                elemt3.style.bottom='-29em';
+                
+                elemt5.style.right='24em';
+                elemt6.style.right='29em';
+                
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle4'){
+                elem2.style.bottom='-14em';
+                elem2.style.right='24.5em';
+
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                elemt2.style.left='12em';
+                elemt3.style.right='5.5em';
+                elemt4.style.bottom='-22em';
+                
+                elemt6.style.bottom='-20em';
+
+                elemt2.style.bottom='-32em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='17.5em';
+                
+                elemt6.style.right='29em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                
+                ielemt6.style.visibility='hidden';
+                
+                }
+        if (tri=='triangle5'){
+                elem2.style.bottom='-18em';
+                elem2.style.right='26em';
+
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                elemt2.style.left='12em';
+                elemt3.style.right='5.5em';
+                elemt4.style.bottom='-22em';
+                elemt5.style.bottom='-18em';
+                
+                elemt2.style.bottom='-32em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='17.5em';
+                elemt5.style.right='24em';   
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                            
+                }
+            }
+        }
+        if ((larg <= 1080)&&(larg >= 780)){
+
+        if (elem.style.visibility=="visible"){
+            elem.style.visibility="hidden";
+            if (tri=='triangle0'){
+                elem2.style.left='24em';
+                elem2.style.bottom='-2.5em';
+            }
+            if (tri=='triangle1'){
+                elem2.style.left='9em';
+                elem2.style.bottom='-5.5em';
+            }
+            if (tri=='triangle2'){
+                elem2.style.right='3.5em';
+                elem2.style.bottom='-3em';
+            }
+            if (tri=='triangle3'){
+                elem2.style.bottom='2em';
+                elem2.style.right='12.5em';
+            }
+            if (tri=='triangle4'){
+                elem2.style.bottom='5em';
+                elem2.style.right='17em';
+                
+                }
+            if (tri=='triangle5'){
+                elem2.style.bottom='3.4em';
+                elem2.style.right='20.7em';
+                
+                }
+        }else{
+        elem.style.visibility="visible";
+        if (tri=='triangle0'){
+                elem2.style.left='27em';
+                elem2.style.bottom='-4em';
+
+                elemt2.style.left='9em';
+                elemt3.style.right='3.5em';
+                elemt4.style.bottom='2em';
+                elemt5.style.bottom='5em';
+                elemt6.style.bottom='3.4em';
+
+                elemt2.style.bottom='-5.5em';
+                elemt3.style.bottom='-3em';
+                elemt4.style.right='12.5em';
+                elemt5.style.right='17em';
+                elemt6.style.right='20.7em';
+
+                
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle1'){
+                elem2.style.left='9em';
+                elem2.style.bottom='-8.5em';
+
+                elemt1.style.left='24em';
+                elemt1.style.bottom='-2.5em';
+                
+                elemt3.style.right='3.5em';
+                elemt4.style.bottom='2em';
+                elemt5.style.bottom='5em';
+                elemt6.style.bottom='3.4em';
+
+                
+                elemt3.style.bottom='-3em';
+                elemt4.style.right='12.5em';
+                elemt5.style.right='17em';
+                elemt6.style.right='20.7em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle2'){
+                elem2.style.right='5em';
+                elem2.style.bottom='-5.5em';
+                
+                elemt1.style.left='24em';
+                elemt1.style.bottom='-2.5em';
+                elemt2.style.left='9em';
+                
+                elemt4.style.bottom='2em';
+                elemt5.style.bottom='5em';
+                elemt6.style.bottom='3.4em';
+
+                elemt2.style.bottom='-5.5em';
+                
+                elemt4.style.right='12.5em';
+                elemt5.style.right='17em';
+                elemt6.style.right='20.7em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle3'){
+                elem2.style.bottom='3.5em';
+                elem2.style.right='14.5em';
+
+                elemt1.style.left='24em';
+                elemt1.style.bottom='-2.5em';
+                elemt2.style.left='9em';
+                elemt3.style.right='3.5em';
+                
+                elemt5.style.bottom='5em';
+                elemt6.style.bottom='3.4em';
+
+                elemt2.style.bottom='-5.5em';
+                elemt3.style.bottom='-3em';
+                
+                elemt5.style.right='17em';
+                elemt6.style.right='20.7em';
+                
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle4'){
+                elem2.style.bottom='8em';
+                elem2.style.right='17.5em';
+
+                elemt1.style.left='24em';
+                elemt1.style.bottom='-2.5em';
+                elemt2.style.left='9em';
+                elemt3.style.right='3.5em';
+                elemt4.style.bottom='2em';
+                
+                elemt6.style.bottom='3.4em';
+
+                elemt2.style.bottom='-5.5em';
+                elemt3.style.bottom='-3em';
+                elemt4.style.right='12.5em';
+                
+                elemt6.style.right='20.7em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                
+                ielemt6.style.visibility='hidden';
+                
+                }
+        if (tri=='triangle5'){
+                elem2.style.bottom='5.4em';
+                elem2.style.right='16.7em';
+
+                elemt1.style.left='24em';
+                elemt1.style.bottom='-2.5em';
+                elemt2.style.left='9em';
+                elemt3.style.right='3.5em';
+                elemt4.style.bottom='2em';
+                elemt5.style.bottom='5em';
+                
+                elemt2.style.bottom='-5.5em';
+                elemt3.style.bottom='-3em';
+                elemt4.style.right='12.5em';
+                elemt5.style.right='17em';   
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                            
+                }
+            }
+        }
+        if ((larg <= 780)&&(larg >= 400)){
+        if (elem.style.visibility=="visible"){
+            elem.style.visibility="hidden";
+            if (tri=='triangle0'){
+                elem2.style.left='23.5em';
+                elem2.style.bottom='-28.5em';
+            }
+            if (tri=='triangle1'){
+                elem2.style.left='11.5em';
+                elem2.style.bottom='-31em';
+            }
+            if (tri=='triangle2'){
+                elem2.style.right='-1.8em';
+                elem2.style.bottom='-29em';
+            }
+            if (tri=='triangle3'){
+                elem2.style.bottom='-25em';
+                elem2.style.right='5em';
+            }
+            if (tri=='triangle4'){
+                elem2.style.bottom='-22.5em';
+                elem2.style.right='8em';
+                
+                }
+            if (tri=='triangle5'){
+                elem2.style.bottom='-24em';
+                elem2.style.right='10.5em';
+                
+                }
+        }else{
+        elem.style.visibility="visible";
+        if (tri=='triangle0'){
+                elem2.style.left='25em';
+                elem2.style.bottom='-29em';
+
+                elemt2.style.left='11.5em';
+                elemt3.style.right='-1.8em';
+                elemt4.style.bottom='-25em';
+                elemt5.style.bottom='-22.5em';
+                elemt6.style.bottom='-24em';
+                elemt2.style.bottom='-31em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='5em';
+                elemt5.style.right='8em';
+                elemt6.style.right='10.5em';
+
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle1'){
+                elem2.style.left='11.5em';
+                elem2.style.bottom='-34em';
+
+                elemt1.style.left='23.5em';
+                elemt1.style.bottom='-28.5em';
+                
+                elemt3.style.right='-1.8em';
+                elemt4.style.bottom='-25em';
+                elemt5.style.bottom='-22.5em';
+                elemt6.style.bottom='-24em';
+
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='5em';
+                elemt5.style.right='8em';
+                elemt6.style.right='10.5em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle2'){
+                elem2.style.right='0.2em';
+                elem2.style.bottom='-31em';
+
+                elemt1.style.left='23.5em';
+                elemt1.style.bottom='-28.5em';
+                elemt2.style.left='11.5em';
+
+                elemt4.style.bottom='-25em';
+                elemt5.style.bottom='-22.5em';
+                elemt6.style.bottom='-24em';
+                elemt2.style.bottom='-31em';
+
+                elemt4.style.right='5em';
+                elemt5.style.right='8em';
+                elemt6.style.right='10.5em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle3'){
+
+                elem2.style.bottom='-24em';
+                elem2.style.right='7em';
+
+                elemt1.style.left='23.5em';
+                elemt1.style.bottom='-28.5em';
+                elemt2.style.left='11.5em';
+                elemt3.style.right='-1.8em';
+
+                elemt5.style.bottom='-22.5em';
+                elemt6.style.bottom='-24em';
+                elemt2.style.bottom='-31em';
+                elemt3.style.bottom='-29em';
+
+                elemt5.style.right='8em';
+                elemt6.style.right='10.5em';
+                
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle4'){
+            elem2.style.bottom='-20.5em';
+                elem2.style.right='9em';
+
+                elemt1.style.left='23.5em';
+                elemt1.style.bottom='-28.5em';
+                elemt2.style.left='11.5em';
+                elemt3.style.right='-1.8em';
+                elemt4.style.bottom='-25em';
+
+                elemt6.style.bottom='-24em';
+                elemt2.style.bottom='-31em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='5em';
+
+                elemt6.style.right='10.5em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                
+                ielemt6.style.visibility='hidden';
+                
+                }
+        if (tri=='triangle5'){
+                elem2.style.bottom='-22em';
+                elem2.style.right='9em';
+
+                elemt1.style.left='23.5em';
+                elemt1.style.bottom='-28.5em';
+                elemt2.style.left='11.5em';
+                elemt3.style.right='-1.8em';
+                elemt4.style.bottom='-25em';
+                elemt5.style.bottom='-22.5em';
+ 
+                elemt2.style.bottom='-31em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='5em';
+                elemt5.style.right='8em';
+
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                            
+                }
+            }
+        }
+    }
+        function myMove2(idd,tri){
+            if (document.body)
+        {
+        var larg = (document.body.clientWidth);
+        }
+        else
+        {
+        var larg = (window.innerWidth);
+        }
+            
+        var elem = document.getElementById(idd);
+        var elem2 = document.getElementById(tri);
+
+        var elemt1 = document.getElementById('triangle10');
+        var elemt2 = document.getElementById('triangle11');
+        var elemt3 = document.getElementById('triangle12');
+        var elemt4 = document.getElementById('triangle13');
+        var elemt5 = document.getElementById('triangle14');
+        var elemt6 = document.getElementById('triangle15');
+
+        var ielemt1 = document.getElementById('animate10');
+        var ielemt2 = document.getElementById('animate11');
+        var ielemt3 = document.getElementById('animate12');
+        var ielemt4 = document.getElementById('animate13');
+        var ielemt5 = document.getElementById('animate14');
+        var ielemt6 = document.getElementById('animate15');
+        if (larg >= 1080) {
+        if (elem.style.visibility=="visible"){
+            elem.style.visibility="hidden";
+            if (tri=='triangle10'){
+                elem2.style.left='32em';
+                elem2.style.bottom='-28em';
+            }
+            if (tri=='triangle11'){
+                elem2.style.left='12em';
+                elem2.style.bottom='-32em';
+            }
+            if (tri=='triangle12'){
+                elem2.style.right='5.5em';
+                elem2.style.bottom='-29em';
+            }
+            if (tri=='triangle13'){
+                elem2.style.bottom='-22em';
+                elem2.style.right='17.5em';
+            }
+            if (tri=='triangle14'){
+                elem2.style.bottom='-18em';
+                elem2.style.right='24em';
+                
+                }
+            if (tri=='triangle15'){
+                elem2.style.bottom='-20em';
+                elem2.style.right='29em';
+                
+                }
+        }else{
+        elem.style.visibility="visible";
+        if (tri=='triangle10'){
+                elem2.style.left='36em';
+                elem2.style.bottom='-30em';
+
+                elemt2.style.left='12em';
+                elemt3.style.right='5.5em';
+                elemt4.style.bottom='-22em';
+                elemt5.style.bottom='-18em';
+                elemt6.style.bottom='-20em';
+
+                elemt2.style.bottom='-32em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='17.5em';
+                elemt5.style.right='24em';
+                elemt6.style.right='29em';
+
+                
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle11'){
+                elem2.style.left='12em';
+                elem2.style.bottom='-36em';
+
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                
+                elemt3.style.right='5.5em';
+                elemt4.style.bottom='-22em';
+                elemt5.style.bottom='-18em';
+                elemt6.style.bottom='-20em';
+
+                
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='17.5em';
+                elemt5.style.right='24em';
+                elemt6.style.right='29em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle12'){
+                elem2.style.right='9em';
+                elem2.style.bottom='-33em';
+                
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                elemt2.style.left='12em';
+                
+                elemt4.style.bottom='-22em';
+                elemt5.style.bottom='-18em';
+                elemt6.style.bottom='-20em';
+
+                elemt2.style.bottom='-32em';
+                
+                elemt4.style.right='17.5em';
+                elemt5.style.right='24em';
+                elemt6.style.right='29em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle13'){
+                elem2.style.bottom='-20em';
+                elem2.style.right='22.5em';
+
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                elemt2.style.left='12em';
+                elemt3.style.right='5.5em';
+                
+                elemt5.style.bottom='-18em';
+                elemt6.style.bottom='-20em';
+
+                elemt2.style.bottom='-32em';
+                elemt3.style.bottom='-29em';
+                
+                elemt5.style.right='24em';
+                elemt6.style.right='29em';
+                
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                ielemt6.style.visibility='hidden';
+                }
+        if (tri=='triangle14'){
+                elem2.style.bottom='-14em';
+                elem2.style.right='24.5em';
+
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                elemt2.style.left='12em';
+                elemt3.style.right='5.5em';
+                elemt4.style.bottom='-22em';
+                
+                elemt6.style.bottom='-20em';
+
+                elemt2.style.bottom='-32em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='17.5em';
+                
+                elemt6.style.right='29em';
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                
+                ielemt6.style.visibility='hidden';
+                
+                }
+        if (tri=='triangle15'){
+                elem2.style.bottom='-18em';
+                elem2.style.right='26em';
+
+                elemt1.style.left='32em';
+                elemt1.style.bottom='-28em';
+                elemt2.style.left='12em';
+                elemt3.style.right='5.5em';
+                elemt4.style.bottom='-22em';
+                elemt5.style.bottom='-18em';
+                
+                elemt2.style.bottom='-32em';
+                elemt3.style.bottom='-29em';
+                elemt4.style.right='17.5em';
+                elemt5.style.right='24em';   
+
+                ielemt1.style.visibility='hidden';
+                ielemt2.style.visibility='hidden';
+                ielemt3.style.visibility='hidden';
+                ielemt4.style.visibility='hidden';
+                ielemt5.style.visibility='hidden';
+                            
+                }
+            }
+        }
+        if ((larg <= 1080)&&(larg >= 780)){
+            if (elem.style.visibility=="visible"){
+                elem.style.visibility="hidden";
+                if (tri=='triangle10'){
+                    elem2.style.left='24em';
+                    elem2.style.bottom='-2.5em';
+                }
+                if (tri=='triangle11'){
+                    elem2.style.left='9em';
+                    elem2.style.bottom='-5.5em';
+                }
+                if (tri=='triangle12'){
+                    elem2.style.right='3.5em';
+                    elem2.style.bottom='-3em';
+                }
+                if (tri=='triangle13'){
+                    elem2.style.bottom='2em';
+                    elem2.style.right='12.5em';
+                }
+                if (tri=='triangle14'){
+                    elem2.style.bottom='5em';
+                    elem2.style.right='17em';
+                    
+                    }
+                if (tri=='triangle15'){
+                    elem2.style.bottom='3.4em';
+                    elem2.style.right='20.7em';
+                    
+                    }
+            }else{
+            elem.style.visibility="visible";
+            if (tri=='triangle10'){
+                    elem2.style.left='27em';
+                    elem2.style.bottom='-4em';
+
+                    elemt2.style.left='9em';
+                    elemt3.style.right='3.5em';
+                    elemt4.style.bottom='2em';
+                    elemt5.style.bottom='5em';
+                    elemt6.style.bottom='3.4em';
+
+                    elemt2.style.bottom='-5.5em';
+                    elemt3.style.bottom='-3em';
+                    elemt4.style.right='12.5em';
+                    elemt5.style.right='17em';
+                    elemt6.style.right='20.7em';
+
+                    
+                    ielemt2.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                    ielemt6.style.visibility='hidden';
+                    }
+            if (tri=='triangle11'){
+                    elem2.style.left='9em';
+                    elem2.style.bottom='-8.5em';
+
+                    elemt1.style.left='24em';
+                    elemt1.style.bottom='-2.5em';
+                    
+                    elemt3.style.right='3.5em';
+                    elemt4.style.bottom='2em';
+                    elemt5.style.bottom='5em';
+                    elemt6.style.bottom='3.4em';
+
+                    
+                    elemt3.style.bottom='-3em';
+                    elemt4.style.right='12.5em';
+                    elemt5.style.right='17em';
+                    elemt6.style.right='20.7em';
+
+                    ielemt1.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                    ielemt6.style.visibility='hidden';
+                    }
+            if (tri=='triangle12'){
+                    elem2.style.right='5em';
+                    elem2.style.bottom='-5.5em';
+                    
+                    elemt1.style.left='24em';
+                    elemt1.style.bottom='-2.5em';
+                    elemt2.style.left='9em';
+                    
+                    elemt4.style.bottom='2em';
+                    elemt5.style.bottom='5em';
+                    elemt6.style.bottom='3.4em';
+
+                    elemt2.style.bottom='-5.5em';
+                    
+                    elemt4.style.right='12.5em';
+                    elemt5.style.right='17em';
+                    elemt6.style.right='20.7em';
+
+                    ielemt1.style.visibility='hidden';
+                    ielemt2.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                    ielemt6.style.visibility='hidden';
+                    }
+            if (tri=='triangle13'){
+                    elem2.style.bottom='3.5em';
+                    elem2.style.right='14.5em';
+
+                    elemt1.style.left='24em';
+                    elemt1.style.bottom='-2.5em';
+                    elemt2.style.left='9em';
+                    elemt3.style.right='3.5em';
+                    
+                    elemt5.style.bottom='5em';
+                    elemt6.style.bottom='3.4em';
+
+                    elemt2.style.bottom='-5.5em';
+                    elemt3.style.bottom='-3em';
+                    
+                    elemt5.style.right='17em';
+                    elemt6.style.right='20.7em';
+                    
+                    ielemt1.style.visibility='hidden';
+                    ielemt2.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                    ielemt6.style.visibility='hidden';
+                    }
+            if (tri=='triangle14'){
+                    elem2.style.bottom='8em';
+                    elem2.style.right='17.5em';
+
+                    elemt1.style.left='24em';
+                    elemt1.style.bottom='-2.5em';
+                    elemt2.style.left='9em';
+                    elemt3.style.right='3.5em';
+                    elemt4.style.bottom='2em';
+                    
+                    elemt6.style.bottom='3.4em';
+
+                    elemt2.style.bottom='-5.5em';
+                    elemt3.style.bottom='-3em';
+                    elemt4.style.right='12.5em';
+                    
+                    elemt6.style.right='20.7em';
+
+                    ielemt1.style.visibility='hidden';
+                    ielemt2.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    
+                    ielemt6.style.visibility='hidden';
+                    
+                    }
+            if (tri=='triangle15'){
+                    elem2.style.bottom='5.4em';
+                    elem2.style.right='16.7em';
+
+                    elemt1.style.left='24em';
+                    elemt1.style.bottom='-2.5em';
+                    elemt2.style.left='9em';
+                    elemt3.style.right='3.5em';
+                    elemt4.style.bottom='2em';
+                    elemt5.style.bottom='5em';
+                    
+                    elemt2.style.bottom='-5.5em';
+                    elemt3.style.bottom='-3em';
+                    elemt4.style.right='12.5em';
+                    elemt5.style.right='17em';   
+
+                    ielemt1.style.visibility='hidden';
+                    ielemt2.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                                
+                    }
+                }
+            }
+            if ((larg <= 780)&&(larg >= 400)){
+            if (elem.style.visibility=="visible"){
+                elem.style.visibility="hidden";
+                if (tri=='triangle10'){
+                    elem2.style.left='23.5em';
+                    elem2.style.bottom='-28.5em';
+                }
+                if (tri=='triangle11'){
+                    elem2.style.left='11.5em';
+                    elem2.style.bottom='-31em';
+                }
+                if (tri=='triangle12'){
+                    elem2.style.right='-1.8em';
+                    elem2.style.bottom='-29em';
+                }
+                if (tri=='triangle13'){
+                    elem2.style.bottom='-25em';
+                    elem2.style.right='5em';
+                }
+                if (tri=='triangle14'){
+                    elem2.style.bottom='-22.5em';
+                    elem2.style.right='8em';
+                    
+                    }
+                if (tri=='triangle15'){
+                    elem2.style.bottom='-24em';
+                    elem2.style.right='10.5em';
+                    
+                    }
+            }else{
+            elem.style.visibility="visible";
+            if (tri=='triangle10'){
+                    elem2.style.left='25em';
+                    elem2.style.bottom='-29em';
+
+                    elemt2.style.left='11.5em';
+                    elemt3.style.right='-1.8em';
+                    elemt4.style.bottom='-25em';
+                    elemt5.style.bottom='-22.5em';
+                    elemt6.style.bottom='-24em';
+                    elemt2.style.bottom='-31em';
+                    elemt3.style.bottom='-29em';
+                    elemt4.style.right='5em';
+                    elemt5.style.right='8em';
+                    elemt6.style.right='10.5em';
+
+                    ielemt2.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                    ielemt6.style.visibility='hidden';
+                    }
+            if (tri=='triangle11'){
+                    elem2.style.left='11.5em';
+                    elem2.style.bottom='-34em';
+
+                    elemt1.style.left='23.5em';
+                    elemt1.style.bottom='-28.5em';
+                    
+                    elemt3.style.right='-1.8em';
+                    elemt4.style.bottom='-25em';
+                    elemt5.style.bottom='-22.5em';
+                    elemt6.style.bottom='-24em';
+
+                    elemt3.style.bottom='-29em';
+                    elemt4.style.right='5em';
+                    elemt5.style.right='8em';
+                    elemt6.style.right='10.5em';
+
+                    ielemt1.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                    ielemt6.style.visibility='hidden';
+                    }
+            if (tri=='triangle12'){
+                    elem2.style.right='0.2em';
+                    elem2.style.bottom='-31em';
+
+                    elemt1.style.left='23.5em';
+                    elemt1.style.bottom='-28.5em';
+                    elemt2.style.left='11.5em';
+
+                    elemt4.style.bottom='-25em';
+                    elemt5.style.bottom='-22.5em';
+                    elemt6.style.bottom='-24em';
+                    elemt2.style.bottom='-31em';
+
+                    elemt4.style.right='5em';
+                    elemt5.style.right='8em';
+                    elemt6.style.right='10.5em';
+
+                    ielemt1.style.visibility='hidden';
+                    ielemt2.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                    ielemt6.style.visibility='hidden';
+                    }
+            if (tri=='triangle13'){
+
+                    elem2.style.bottom='-24em';
+                    elem2.style.right='7em';
+
+                    elemt1.style.left='23.5em';
+                    elemt1.style.bottom='-28.5em';
+                    elemt2.style.left='11.5em';
+                    elemt3.style.right='-1.8em';
+
+                    elemt5.style.bottom='-22.5em';
+                    elemt6.style.bottom='-24em';
+                    elemt2.style.bottom='-31em';
+                    elemt3.style.bottom='-29em';
+
+                    elemt5.style.right='8em';
+                    elemt6.style.right='10.5em';
+                    
+                    ielemt1.style.visibility='hidden';
+                    ielemt2.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                    ielemt6.style.visibility='hidden';
+                    }
+            if (tri=='triangle14'){
+                elem2.style.bottom='-20.5em';
+                    elem2.style.right='9em';
+
+                    elemt1.style.left='23.5em';
+                    elemt1.style.bottom='-28.5em';
+                    elemt2.style.left='11.5em';
+                    elemt3.style.right='-1.8em';
+                    elemt4.style.bottom='-25em';
+
+                    elemt6.style.bottom='-24em';
+                    elemt2.style.bottom='-31em';
+                    elemt3.style.bottom='-29em';
+                    elemt4.style.right='5em';
+
+                    elemt6.style.right='10.5em';
+
+                    ielemt1.style.visibility='hidden';
+                    ielemt2.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    
+                    ielemt6.style.visibility='hidden';
+                    
+                    }
+            if (tri=='triangle15'){
+                    elem2.style.bottom='-22em';
+                    elem2.style.right='9em';
+
+                    elemt1.style.left='23.5em';
+                    elemt1.style.bottom='-28.5em';
+                    elemt2.style.left='11.5em';
+                    elemt3.style.right='-1.8em';
+                    elemt4.style.bottom='-25em';
+                    elemt5.style.bottom='-22.5em';
+
+                    elemt2.style.bottom='-31em';
+                    elemt3.style.bottom='-29em';
+                    elemt4.style.right='5em';
+                    elemt5.style.right='8em';
+
+
+                    ielemt1.style.visibility='hidden';
+                    ielemt2.style.visibility='hidden';
+                    ielemt3.style.visibility='hidden';
+                    ielemt4.style.visibility='hidden';
+                    ielemt5.style.visibility='hidden';
+                                
+                    }
+                }
+            }
+    }
+</script>
